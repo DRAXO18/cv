@@ -68,7 +68,7 @@ export const cvData = {
     {
       degree: "Ingeniería de Software con Inteligencia Artificial",
       institution: "SENATI",
-      year: "2025",
+      year: "2023-2025",
       relevant: [
         "Desarrollo backend con Laravel",
         "Desarrollo frontend con React",
