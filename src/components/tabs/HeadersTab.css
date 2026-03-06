@@ -142,3 +142,17 @@
   font-size: 12px;
   transition: color 0.15s;
 }
+@media (max-width: 768px) {
+  .headers-table {
+    font-size: 11px;
+  }
+
+  .cell-input {
+    font-size: 11px;
+    padding: 4px 6px;
+  }
+
+  .col-key {
+    width: 45%;
+  }
+}

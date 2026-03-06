@@ -59,3 +59,23 @@
   padding: 16px;
   min-height: 160px;
 }
+@media (max-width: 768px) {
+  .tabs-nav {
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .tabs-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tab-btn {
+    font-size: 12px;
+    padding: 10px 12px;
+    white-space: nowrap;
+  }
+
+  .tab-content {
+    padding: 12px;
+  }
+}

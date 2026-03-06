@@ -127,3 +127,19 @@
   padding: 1px 4px;
   border-radius: 3px;
 }
+@media (max-width: 768px) {
+  .auth-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .auth-type-group {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+
+  .auth-token-group {
+    width: 100%;
+    min-width: 0;
+  }
+}
