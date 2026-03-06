@@ -27,7 +27,7 @@ export default function AuthorizationTab({ token, onTokenChange }: Props) {
             <input
               className="token-input"
               type="password"
-              placeholder="Enter your Bearer token..."
+              placeholder="Ingrese un token válido (Sugerencia -> ia2026)"
               value={token}
               onChange={e => onTokenChange(e.target.value)}
               autoComplete="off"

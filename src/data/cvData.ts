@@ -1,14 +1,18 @@
 export const cvData = {
   personal: {
     name: "José Ghenaro Tueros Morón",
-    title: "Backend Developer",
+    title: "Fullstack Developer",
     email: "tuerosmorong@gmail.com",
     phone: "+51 933142128",
     location: "Huancayo, Perú",
     github: "github.com/DRAXO18",
-    linkedin: null,
+    linkedin: "Jose Tueros Moron",
+    languages: [
+      "Spanish — Native",
+      "English — A1"
+    ],
     summary:
-      "Desarrollador backend enfocado en APIs con Laravel, sistemas escalables y análisis de datos asistido por IA. Experiencia construyendo plataformas de inventario, sistemas de gestión de servicios y aplicaciones web para negocios.",
+      "Desarrollador fullstack enfocado en estructura backend. APIs con Laravel, sistemas escalables y análisis de datos asistido por IA. Experiencia construyendo plataformas integrales, escalables y modulares.",
   },
 
   experience: [
@@ -60,18 +64,29 @@ export const cvData = {
     ],
   },
 
-  education: {
-    degree: "Formación autodidacta en desarrollo web",
-    institution: "Aprendizaje independiente",
-    year: "En curso",
-    relevant: [
-      "Desarrollo backend con Laravel",
-      "Desarrollo frontend con React",
-      "Bases de datos SQL",
-      "Arquitectura de REST APIs",
-      "Integración de IA en sistemas de software",
-    ],
-  },
+  education: [
+    {
+      degree: "Ingeniería de Software con Inteligencia Artificial",
+      institution: "SENATI",
+      year: "2025",
+      relevant: [
+        "Desarrollo backend con Laravel",
+        "Desarrollo frontend con React",
+        "Bases de datos SQL",
+        "Arquitectura de REST APIs"
+      ]
+    },
+    {
+      degree: "Formación autodidacta en desarrollo web",
+      institution: "Aprendizaje independiente",
+      year: "En curso",
+      relevant: [
+        "Integración de IA mediante APIs de OPEN-AI y GEMINI",
+        "Desarrollo con Docker",
+        "Linux básico, producción en VPS"
+      ]
+    }
+  ],
 
   projects: [
     {
@@ -118,34 +133,34 @@ export const endpoints: {
   method: "GET" | "POST" | "PUT" | "DELETE" | "PATCH";
   responseKey: keyof typeof cvData;
 }[] = [
-  {
-    label: "Información Personal",
-    url: "https://api.tueros.dev/v1/informacion-personal",
-    method: "GET",
-    responseKey: "personal",
-  },
-  {
-    label: "Experiencia",
-    url: "https://api.tueros.dev/v1/experiencia",
-    method: "GET",
-    responseKey: "experience",
-  },
-  {
-    label: "Habilidades",
-    url: "https://api.tueros.dev/v1/habilidades",
-    method: "GET",
-    responseKey: "skills",
-  },
-  {
-    label: "Educación",
-    url: "https://api.tueros.dev/v1/educacion",
-    method: "GET",
-    responseKey: "education",
-  },
-  {
-    label: "Proyectos",
-    url: "https://api.tueros.dev/v1/proyectos",
-    method: "GET",
-    responseKey: "projects",
-  },
-];
+    {
+      label: "Información Personal",
+      url: "https://api.tueros.dev/v1/informacion-personal",
+      method: "GET",
+      responseKey: "personal",
+    },
+    {
+      label: "Experiencia",
+      url: "https://api.tueros.dev/v1/experiencia",
+      method: "GET",
+      responseKey: "experience",
+    },
+    {
+      label: "Habilidades",
+      url: "https://api.tueros.dev/v1/habilidades",
+      method: "GET",
+      responseKey: "skills",
+    },
+    {
+      label: "Educación",
+      url: "https://api.tueros.dev/v1/educacion",
+      method: "GET",
+      responseKey: "education",
+    },
+    {
+      label: "Proyectos",
+      url: "https://api.tueros.dev/v1/proyectos",
+      method: "GET",
+      responseKey: "projects",
+    },
+  ];
