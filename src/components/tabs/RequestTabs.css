@@ -1,0 +1,61 @@
+.request-tabs {
+  background: #1e1e1e;
+  border: 1px solid #3a3a3a;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.tabs-nav {
+  display: flex;
+  border-bottom: 1px solid #3a3a3a;
+  background: #1a1a1a;
+  padding: 0 8px;
+}
+
+.tab-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 14px;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: #888;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 13px;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s;
+  margin-bottom: -1px;
+  white-space: nowrap;
+}
+
+.tab-btn:hover {
+  color: #ccc;
+}
+
+.tab-btn.active {
+  color: #f06a35;
+  border-bottom-color: #f06a35;
+}
+
+.tab-badge {
+  background: #f06a35;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 1px 6px;
+  border-radius: 10px;
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+.tab-dot {
+  width: 6px;
+  height: 6px;
+  background: #6bdd9a;
+  border-radius: 50%;
+}
+
+.tab-content {
+  padding: 16px;
+  min-height: 160px;
+}

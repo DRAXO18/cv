@@ -1,0 +1,144 @@
+.headers-tab {
+  overflow-x: auto;
+}
+
+.headers-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+}
+
+.headers-table thead tr {
+  border-bottom: 1px solid #3a3a3a;
+}
+
+.headers-table th {
+  padding: 6px 10px;
+  text-align: left;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.col-check { width: 32px; }
+.col-key { width: 40%; }
+.col-value { width: auto; }
+.col-action { width: 32px; }
+
+.header-row {
+  border-bottom: 1px solid #2a2a2a;
+  transition: background 0.1s;
+}
+
+.header-row:hover {
+  background: #252525;
+}
+
+.header-row.disabled .cell-input {
+  opacity: 0.4;
+}
+
+.header-row td {
+  padding: 2px 4px;
+}
+
+.row-check {
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border: 1px solid #555;
+  border-radius: 3px;
+  background: transparent;
+  cursor: pointer;
+  display: block;
+  margin: auto;
+  position: relative;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.row-check:checked {
+  background: #f06a35;
+  border-color: #f06a35;
+}
+
+.row-check:checked::after {
+  content: '';
+  position: absolute;
+  left: 3px;
+  top: 1px;
+  width: 6px;
+  height: 9px;
+  border: 2px solid #fff;
+  border-top: none;
+  border-left: none;
+  transform: rotate(45deg);
+}
+
+.cell-input {
+  width: 100%;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  outline: none;
+  color: #e0e0e0;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  padding: 5px 8px;
+  transition: border-color 0.15s, background 0.15s;
+  box-sizing: border-box;
+}
+
+.cell-input:focus {
+  border-color: #3a3a3a;
+  background: #252525;
+}
+
+.cell-input::placeholder {
+  color: #444;
+  font-style: italic;
+}
+
+.cell-input:disabled {
+  color: #777;
+  cursor: default;
+}
+
+.key-input {
+  color: #6bdd9a;
+}
+
+.remove-row-btn {
+  background: none;
+  border: none;
+  color: #555;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 4px 8px;
+  transition: color 0.15s;
+  line-height: 1;
+}
+
+.remove-row-btn:hover {
+  color: #f55b5b;
+}
+
+.add-row {
+  cursor: pointer;
+}
+
+.add-row:hover .add-row-label {
+  color: #f06a35;
+}
+
+.add-row-label {
+  display: block;
+  padding: 8px 10px;
+  color: #555;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 12px;
+  transition: color 0.15s;
+}
