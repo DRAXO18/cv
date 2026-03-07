@@ -1,10 +1,12 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import type { HttpMethod, Header, ResponseData } from './types/apiTypes';
 import { endpoints } from './data/cvData';
 import { fakeApiCall } from './services/fakeApi';
 import RequestBar from './components/request/RequestBar';
 import RequestTabs from './components/tabs/RequestTabs';
 import ResponsePanel from './components/response/ResponsePanel';
+import 'driver.js/dist/driver.css';
+import { driver } from "driver.js"
 import './App.css';
 
 const DEFAULT_HEADERS: Header[] = [
@@ -43,6 +45,46 @@ export default function App() {
     }
   };
 
+  const startTour = () => {
+    const driverObj = driver({
+      showProgress: true,
+      animate: true,
+      progressText: "{{current}} de {{total}}",
+      nextBtnText: "Siguiente",
+      prevBtnText: "Anterior",
+      doneBtnText: "Entendido",
+      steps: [
+        {
+          element: "#request-bar",
+          popover: {
+            title: "API Request",
+            description: "Aquí puedes escribir o seleccionar en la barra lateral un endpoint para consultar información de mi CV interactivo."
+          }
+        },
+        {
+          element: "#request-tabs",
+          popover: {
+            title: "Configuración de Request",
+            description: "Simulación de parámetros de una API, escribe cualquier carácter en Token."
+          }
+        },
+        {
+          element: "#response-panel",
+          popover: {
+            title: "API Response",
+            description: "Aquí se muestra la respuesta en JSON de mi información simulando una API real."
+          }
+        }
+      ]
+    })
+
+    driverObj.drive()
+  }
+
+  useEffect(() => {
+    startTour()
+  }, [])
+
   return (
     <div className="app">
       {/* Sidebar */}
@@ -50,8 +92,8 @@ export default function App() {
         <div className="sidebar-logo">
           <div className="logo-icon">
             <svg viewBox="0 0 28 28" fill="none">
-              <circle cx="14" cy="14" r="13" stroke="#f06a35" strokeWidth="2"/>
-              <path d="M8 14h12M14 8l6 6-6 6" stroke="#f06a35" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              <circle cx="14" cy="14" r="13" stroke="#f06a35" strokeWidth="2" />
+              <path d="M8 14h12M14 8l6 6-6 6" stroke="#f06a35" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </div>
           <div>
@@ -64,7 +106,7 @@ export default function App() {
         <div className="sidebar-collection">
           <div className="collection-header">
             <svg className="collection-arrow" viewBox="0 0 10 6" fill="none">
-              <path d="M1 1l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+              <path d="M1 1l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
             </svg>
             <span className="collection-name">josetueros-cv</span>
           </div>
@@ -97,29 +139,35 @@ export default function App() {
         </header>
 
         <div className="workspace">
-          <RequestBar
-            method={method}
-            url={url}
-            loading={loading}
-            onMethodChange={setMethod}
-            onUrlChange={setUrl}
-            onSend={handleSend}
-          />
+          <div id="request-bar">
+            <RequestBar
+              method={method}
+              url={url}
+              loading={loading}
+              onMethodChange={setMethod}
+              onUrlChange={setUrl}
+              onSend={handleSend}
+            />
+          </div>
 
-          <RequestTabs
-            token={token}
-            headers={headers}
-            body={body}
-            onTokenChange={setToken}
-            onHeadersChange={setHeaders}
-            onBodyChange={setBody}
-          />
+          <div id="request-tabs">
+            <RequestTabs
+              token={token}
+              headers={headers}
+              body={body}
+              onTokenChange={setToken}
+              onHeadersChange={setHeaders}
+              onBodyChange={setBody}
+            />
+          </div>
 
-          <ResponsePanel
-            response={response}
-            loading={loading}
-            error={error}
-          />
+          <div id="response-panel">
+            <ResponsePanel
+              response={response}
+              loading={loading}
+              error={error}
+            />
+          </div>
         </div>
       </main>
     </div>
